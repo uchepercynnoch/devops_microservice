@@ -23,11 +23,11 @@ EXPOSE 5000
 
 WORKDIR /usr/src/app
 
-COPY --from=development /usr/src/app/node_modules ./node_modules
+COPY --from=build /usr/src/app/node_modules ./node_modules
 
 COPY . .
 
-RUN mv /usr/src/app/.env.docker /usr/src/app/.env
+#RUN mv /usr/src/app/.env.docker /usr/src/app/.env
 
 RUN npm run build
 

@@ -13,7 +13,7 @@ RUN yarn install
 ## Copy everything in current folder to working directory
 COPY . .
 
-RUN mv /app/.env.docker.example /app/.env
+#RUN mv /app/.env.docker.example /app/.env
 
 ## Run yarn build, to build react app
 RUN npm run build
