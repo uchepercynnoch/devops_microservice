@@ -17,55 +17,55 @@
 
     - name: Shutdown and remove docker containers
       command: docker compose -f docker-compose.yaml down
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Build new docker images
       command: docker compose -f docker-compose.yaml build
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Tag frontend image
       command: docker tag dev-frontend uchepercynnoch/dev-frontend
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Tag backend image
       command: docker tag dev-backend uchepercynnoch/dev-backend
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Tag nginx image
       command: docker tag dev-nginx uchepercynnoch/dev-nginx
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Push frontend image to dockerhub
       command: docker push uchepercynnoch/dev-frontend
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Push backend image to dockerhub
       command: docker push uchepercynnoch/dev-backend
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Push nginx image to dockerhub
       command: docker push uchepercynnoch/dev-nginx
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Remove frontend images
       command: docker rmi dev-frontend uchepercynnoch/dev-frontend
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Remove backend images
       command: docker rmi dev-backend uchepercynnoch/dev-backend
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
 
     - name: Remove nginx images
       command: docker rmi dev-nginx uchepercynnoch/dev-nginx
-      args:
-        chdir: /opt/devops
+#      args:
+#        chdir: /opt/devops
