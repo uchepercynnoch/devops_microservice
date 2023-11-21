@@ -1,0 +1,27 @@
+{
+  "name": "react_nest_microservice_template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint \"backend/src/**/*.ts\" --fix",
+    "format": "prettier --write \"frontend/**/*.ts\" \"backend/**/*.ts\"",
+    "backend:test": "cd backend && npm run test:e2e"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "singleQuote": true,
+    "printWidth": 240
+  }
+}

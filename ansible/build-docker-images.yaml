@@ -1,0 +1,68 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Prune Docker Images
+      command: docker image prune -f
+
+    - name: Prune Docker Containers
+      command: docker container prune -f
+
+    - name: Prune Docker Volumes
+      command: docker volume prune -f
+
+    - name: Shutdown and remove docker containers
+      command: docker compose -f docker-compose.yaml down
+      args:
+        chdir: /opt/app
+
+    - name: Build new docker images
+      command: docker compose -f docker-compose.yaml build
+      args:
+        chdir: /opt/app
+
+    - name: Tag frontend image
+      command: docker tag frontend uchepercynnoch/frontend
+      args:
+        chdir: /opt/app
+
+    - name: Tag backend image
+      command: docker tag backend uchepercynnoch/backend
+      args:
+        chdir: /opt/app
+
+    - name: Tag nginx image
+      command: docker tag nginx uchepercynnoch/nginx
+      args:
+        chdir: /opt/app
+
+    - name: Push frontend image to dockerhub
+      command: docker push uchepercynnoch/frontend
+      args:
+        chdir: /opt/app
+
+    - name: Push backend image to dockerhub
+      command: docker push uchepercynnoch/backend
+      args:
+        chdir: /opt/app
+
+    - name: Push nginx image to dockerhub
+      command: docker push uchepercynnoch/nginx
+      args:
+        chdir: /opt/app
+
+    - name: Remove frontend images
+      command: docker rmi frontend uchepercynnoch/frontend
+      args:
+        chdir: /opt/app
+
+    - name: Remove backend images
+      command: docker rmi backend uchepercynnoch/backend
+      args:
+        chdir: /opt/app
+
+    - name: Remove nginx images
+      command: docker rmi nginx uchepercynnoch/nginx
+      args:
+        chdir: /opt/app

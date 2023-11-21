@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-deployment
+  template:
+    metadata:
+      name: backend-deployment
+      labels:
+        app: backend-deployment
+    spec:
+      containers:
+        - name: backend
+          image: uchepercynnoch/backend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+      restartPolicy: Always
+
