@@ -5,12 +5,15 @@
   tasks:
     - name: Prune Docker Images
       command: docker image prune -f
+      ignore_errors: true
 
     - name: Prune Docker Containers
       command: docker container prune -f
+      ignore_errors: true
 
     - name: Prune Docker Volumes
       command: docker volume prune -f
+      ignore_errors: true
 
     - name: Shutdown and remove docker containers
       command: docker compose -f docker-compose.yaml down
