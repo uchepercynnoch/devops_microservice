@@ -2,9 +2,9 @@
 - hosts: all
   become: true
   become_method: su
-  become_user: user
+  become_user: uchenna
 
   tasks:
-    - name: Deploy frontend app
+    - name: Deploy images on k8s cluster
       command: kubectl apply -f k8s
-      chdir:  /opt/app
+      chdir:  /opt/devops

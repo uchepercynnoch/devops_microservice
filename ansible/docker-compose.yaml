@@ -11,7 +11,7 @@ services:
     depends_on:
       - frontend
       - backend
-    container_name: hrms-nginx
+    container_name: dev-nginx
 
   backend:
     build:
@@ -19,7 +19,7 @@ services:
       context: ../backend
     env_file:
       - ../backend/.env.docker.example
-    container_name: hrms-backend
+    container_name: dev-backend
 
   frontend:
     stdin_open: true
@@ -28,4 +28,4 @@ services:
       context: ../frontend
     env_file:
       - ../frontend/.env.docker.example
-    container_name: hrms-frontend
+    container_name: dev-frontend

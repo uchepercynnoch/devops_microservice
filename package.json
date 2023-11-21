@@ -8,7 +8,10 @@
     "prepare": "husky install",
     "lint": "eslint \"backend/src/**/*.ts\" --fix",
     "format": "prettier --write \"frontend/**/*.ts\" \"backend/**/*.ts\"",
-    "backend:test": "cd backend && npm run test:e2e"
+    "backend:test": "cd backend && npm run test:e2e",
+    "install": "yarn frontend:install && yarn backend:install",
+    "frontend:install": "cd frontend && yarn",
+    "backend:install": "cd frontend && yarn"
   },
   "devDependencies": {
     "eslint": "^8.54.0",
