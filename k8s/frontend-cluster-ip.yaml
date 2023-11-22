@@ -7,10 +7,6 @@ spec:
     app: frontend-deployment
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-      name: nginx-port
-    - protocol: TCP
       port: 3000
       targetPort: 3000
       name: react-port

@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: nginx-deployment
   labels:
-    app: frontend-deployment
+    app: nginx-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend-deployment
+      app: nginx-deployment
   template:
     metadata:
-      name: frontend-deployment
+      name: nginx-deployment
       labels:
-        app: frontend-deployment
+        app: nginx-deployment
     spec:
       containers:
-        - name: frontend
-          image: uchepercynnoch/dev-frontend
+        - name: nginx
+          image: uchepercynnoch/dev-nginx
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 3000
+            - containerPort: 80
       restartPolicy: Always
 
