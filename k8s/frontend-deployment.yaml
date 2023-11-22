@@ -17,12 +17,12 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: uchepercynnoch/frontend
+          image: uchepercynnoch/dev-frontend
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
         - name: nginx
-          image: uchepercynnoch/nginx
+          image: uchepercynnoch/dev-nginx
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

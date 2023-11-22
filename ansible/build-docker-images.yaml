@@ -40,10 +40,10 @@
       command: docker push uchepercynnoch/dev-nginx
 
     - name: Remove frontend images
-      command: docker rmi dev-frontend uchepercynnoch/dev-frontend
+      command: docker rmi dev_frontend uchepercynnoch/dev-frontend
 
     - name: Remove backend images
-      command: docker rmi dev-backend uchepercynnoch/dev-backend
+      command: docker rmi dev_backend uchepercynnoch/dev-backend
 
     - name: Remove nginx images
-      command: docker rmi dev-nginx uchepercynnoch/dev-nginx
+      command: docker rmi dev_nginx uchepercynnoch/dev-nginx
