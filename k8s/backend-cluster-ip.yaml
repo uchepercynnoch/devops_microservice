@@ -7,10 +7,8 @@ spec:
     app: backend-deployment
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 5000
+      targetPort: 5000
+      name: backend-port
   type: ClusterIP
 
