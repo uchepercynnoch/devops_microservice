@@ -7,4 +7,5 @@
   tasks:
     - name: Deploy images on k8s cluster
       command: kubectl apply -f k8s
-      chdir:  /opt/devops
+      args:
+        chdir:  /opt/devops
