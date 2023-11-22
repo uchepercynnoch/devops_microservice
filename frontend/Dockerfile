@@ -28,6 +28,6 @@ COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 # Delete the default welcome to nginx page.
 RUN rm /usr/share/nginx/html/*
 
-COPY --from=build /app/.env /usr/share/nginx/html/.env
+#COPY --from=build /app/.env /usr/share/nginx/html/.env
 ## Copy the built react app project to the nginx config directory
 COPY --from=build /app/build /usr/share/nginx/html
