@@ -18,7 +18,7 @@ spec:
       containers:
         - name: backend
           image: uchepercynnoch/dev-backend
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
       restartPolicy: Always
