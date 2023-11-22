@@ -5,6 +5,7 @@ services:
     build:
       context: ../nginx
       dockerfile: Dockerfile
+    image: dev_nginx
     restart: always
     ports:
       - "80:80"
@@ -17,6 +18,7 @@ services:
     build:
       context: ../backend
       dockerfile: Dockerfile
+    image: dev_backend
     container_name: dev-backend
 
   frontend:
@@ -25,3 +27,4 @@ services:
       context: ../frontend
       dockerfile: Dockerfile
     container_name: dev-frontend
+    image: dev_frontend
