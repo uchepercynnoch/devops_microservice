@@ -22,13 +22,13 @@
       command: docker compose -f docker-compose.yaml build
 
     - name: Tag frontend image
-      command: docker tag dev-frontend uchepercynnoch/dev-frontend
+      command: docker tag dev_frontend uchepercynnoch/dev-frontend
 
     - name: Tag backend image
-      command: docker tag dev-backend uchepercynnoch/dev-backend
+      command: docker tag dev_backend uchepercynnoch/dev-backend
 
     - name: Tag nginx image
-      command: docker tag dev-nginx uchepercynnoch/dev-nginx
+      command: docker tag dev_nginx uchepercynnoch/dev-nginx
 
     - name: Push frontend image to dockerhub
       command: docker push uchepercynnoch/dev-frontend
